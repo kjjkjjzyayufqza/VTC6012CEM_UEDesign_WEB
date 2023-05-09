@@ -1,0 +1,7 @@
+/* .ant-menu-item-selected {
+  background-color: #E12555 !important;
+} */
+
+.ant-menu-dark .ant-menu-item-selected {
+  background-color: #E12555 !important;
+}

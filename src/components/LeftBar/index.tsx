@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Icon, { SearchOutlined } from '@ant-design/icons'
 import { Menu, MenuProps } from 'antd'
 
@@ -20,7 +20,11 @@ function getItem (
   } as MenuItem
 }
 
-export const LeftBar = () => {
+interface LeftBarModel {
+  onReplyChange: (value: string) => void
+}
+
+export const LeftBar:FC<LeftBarModel> = ({onReplyChange}) => {
   const items: MenuProps['items'] = [
     getItem(
       '商品分類',
@@ -88,7 +92,8 @@ export const LeftBar = () => {
   ]
 
   const onClick: MenuProps['onClick'] = e => {
-    console.log('click ', e)
+    // console.log('click ', e)
+    onReplyChange(e.key)
   }
 
   return (

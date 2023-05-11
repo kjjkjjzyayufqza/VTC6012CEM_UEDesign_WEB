@@ -1,0 +1,355 @@
+interface MOCK_DATA_MODEL {
+  id: string | number;
+  type: "Mouse" | "Keyboard" | "Gamepad";
+  name: string;
+  prcie: number | string;
+  image: string;
+  hasStock: boolean;
+  discount: number | string | null;
+  discountPrice: number | string;
+  children: MOCK_DATA_CHILDREN[];
+  tag: string[];
+}
+
+interface MOCK_DATA_CHILDREN {
+  id: string;
+  name: string;
+  prcie: number | string;
+  image: string;
+  hasStock: boolean;
+  discount: number | null;
+  discountPrice: number | null;
+}
+
+export const MOCK_DATA: MOCK_DATA_MODEL[] = [
+  {
+    id: "645d1d28332d61b13593c3bc",
+    type: "Mouse",
+    name: "",
+    prcie: 750,
+    image: "mouseList1.jpg",
+    hasStock: true,
+    discount: 30,
+    discountPrice: 300,
+    children: [
+      {
+        id: "645d1d2849b2b9ea8a78304f",
+        name: "",
+        prcie: 1245,
+        image: "mouseList1.jpg",
+        hasStock: false,
+        discount: 12,
+        discountPrice: 870,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d284722161fdb5e09ce",
+    type: "Mouse",
+    name: "",
+    prcie: 997,
+    image: "mouseList1.jpg",
+    hasStock: true,
+    discount: 15,
+    discountPrice: 944,
+    children: [
+      {
+        id: "645d1d28a41c00b37eee25e1",
+        name: "",
+        prcie: 702,
+        image: "mouseList1.jpg",
+        hasStock: true,
+        discount: 13,
+        discountPrice: 182,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d28ca4034d85f986ccd",
+    type: "Mouse",
+    name: "",
+    prcie: 1611,
+    image: "mouseList1.jpg",
+    hasStock: true,
+    discount: 27,
+    discountPrice: 1253,
+    children: [
+      {
+        id: "645d1d2813317acd2e753d59",
+        name: "",
+        prcie: 920,
+        image: "mouseList1.jpg",
+        hasStock: false,
+        discount: 17,
+        discountPrice: 422,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d286db35d847df4be17",
+    type: "Mouse",
+    name: "",
+    prcie: 1717,
+    image: "mouseList1.jpg",
+    hasStock: false,
+    discount: 18,
+    discountPrice: 206,
+    children: [
+      {
+        id: "645d1d2807ae201da4c80497",
+        name: "",
+        prcie: 1125,
+        image: "mouseList1.jpg",
+        hasStock: false,
+        discount: 35,
+        discountPrice: 1273,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d280cea679c7d2d7458",
+    type: "Mouse",
+    name: "",
+    prcie: 469,
+    image: "mouseList1.jpg",
+    hasStock: true,
+    discount: 37,
+    discountPrice: 369,
+    children: [
+      {
+        id: "645d1d285323b4f0f561f534",
+        name: "",
+        prcie: 1313,
+        image: "mouseList1.jpg",
+        hasStock: false,
+        discount: 0,
+        discountPrice: 115,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d28b3372c03668865a6",
+    type: "Keyboard",
+    name: "",
+    prcie: 999,
+    image: "keyboradList1.png",
+    hasStock: false,
+    discount: 2,
+    discountPrice: 986,
+    children: [
+      {
+        id: "645d1d28d96895bf17c58d26",
+        name: "",
+        prcie: 1208,
+        image: "keyboradList1.png",
+        hasStock: false,
+        discount: 19,
+        discountPrice: 1834,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d2849b753858d097beb",
+    type: "Keyboard",
+    name: "",
+    prcie: 1778,
+    image: "keyboradList1.png",
+    hasStock: true,
+    discount: 5,
+    discountPrice: 1688,
+    children: [
+      {
+        id: "645d1d2872f663f5bf5d9532",
+        name: "",
+        prcie: 1504,
+        image: "keyboradList1.png",
+        hasStock: true,
+        discount: 32,
+        discountPrice: 1885,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d284f53ceabbe742b72",
+    type: "Keyboard",
+    name: "",
+    prcie: 844,
+    image: "keyboradList1.png",
+    hasStock: false,
+    discount: 14,
+    discountPrice: 356,
+    children: [
+      {
+        id: "645d1d28b42c30d1e2051e75",
+        name: "",
+        prcie: 454,
+        image: "keyboradList1.png",
+        hasStock: false,
+        discount: 10,
+        discountPrice: 1786,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d280847cbe08ba80e86",
+    type: "Keyboard",
+    name: "",
+    prcie: 682,
+    image: "keyboradList1.png",
+    hasStock: false,
+    discount: 25,
+    discountPrice: 324,
+    children: [
+      {
+        id: "645d1d28d23d83f1d02a1825",
+        name: "",
+        prcie: 1700,
+        image: "keyboradList1.png",
+        hasStock: false,
+        discount: 33,
+        discountPrice: 1598,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d2819fb08c1c671770e",
+    type: "Keyboard",
+    name: "",
+    prcie: 726,
+    image: "keyboradList1.png",
+    hasStock: false,
+    discount: 20,
+    discountPrice: 1482,
+    children: [
+      {
+        id: "645d1d28741f0bd557c24cd7",
+        name: "",
+        prcie: 542,
+        image: "keyboradList1.png",
+        hasStock: false,
+        discount: 18,
+        discountPrice: 1428,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d284e40136d500de309",
+    type: "Gamepad",
+    name: "",
+    prcie: 309,
+    image: "gamepadList1.jpg",
+    hasStock: false,
+    discount: 16,
+    discountPrice: 1880,
+    children: [
+      {
+        id: "645d1d2815bd48523215a031",
+        name: "",
+        prcie: 1172,
+        image: "gamepadList1.jpg",
+        hasStock: true,
+        discount: 24,
+        discountPrice: 1574,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d28c6e8d06a83006ba9",
+    type: "Gamepad",
+    name: "",
+    prcie: 1287,
+    image: "gamepadList1.jpg",
+    hasStock: true,
+    discount: 33,
+    discountPrice: 1095,
+    children: [
+      {
+        id: "645d1d2892b37624675ed20a",
+        name: "",
+        prcie: 1047,
+        image: "gamepadList1.jpg",
+        hasStock: true,
+        discount: 31,
+        discountPrice: 312,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d28c1c46cbfd620974b",
+    type: "Gamepad",
+    name: "",
+    prcie: 1667,
+    image: "gamepadList1.jpg",
+    hasStock: false,
+    discount: 29,
+    discountPrice: 794,
+    children: [
+      {
+        id: "645d1d286f57792621bad787",
+        name: "",
+        prcie: 556,
+        image: "gamepadList1.jpg",
+        hasStock: true,
+        discount: 29,
+        discountPrice: 547,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d28f4d82817ae6c345c",
+    type: "Gamepad",
+    name: "",
+    prcie: 313,
+    image: "gamepadList1.jpg",
+    hasStock: false,
+    discount: 39,
+    discountPrice: 1222,
+    children: [
+      {
+        id: "645d1d28cc3be064d0ff88c8",
+        name: "",
+        prcie: 806,
+        image: "gamepadList1.jpg",
+        hasStock: true,
+        discount: 31,
+        discountPrice: 473,
+      },
+    ],
+    tag: [],
+  },
+  {
+    id: "645d1d2868e78b4eb9292af7",
+    type: "Gamepad",
+    name: "",
+    prcie: 1350,
+    image: "gamepadList1.jpg",
+    hasStock: false,
+    discount: 16,
+    discountPrice: 1897,
+    children: [
+      {
+        id: "645d1d289943d264cd62f3cf",
+        name: "",
+        prcie: 1056,
+        image: "gamepadList1.jpg",
+        hasStock: false,
+        discount: 14,
+        discountPrice: 1150,
+      },
+    ],
+    tag: [],
+  },
+];

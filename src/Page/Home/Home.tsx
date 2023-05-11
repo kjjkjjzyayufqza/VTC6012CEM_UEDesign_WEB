@@ -1,18 +1,39 @@
-import React, { useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 import { AudioOutlined } from '@ant-design/icons'
-import { Button, Carousel, Input, Menu, MenuProps, Space } from 'antd'
+import {
+  Button,
+  Carousel,
+  Image,
+  Input,
+  Menu,
+  MenuProps,
+  Space,
+  Tabs,
+  Typography
+} from 'antd'
 import Icon, { SearchOutlined } from '@ant-design/icons'
 import HeaderBar from '../../components/HeaderBar/HeaderBar'
 import { LeftBar } from '../../components/LeftBar'
 import { QuickSearch } from '../../components/QuickSearch'
-
-const { Search } = Input
+import { AndroidOutlined, AppleOutlined } from '@ant-design/icons'
+import { ItemCard } from '../../components/ItemCard'
+import { MainPage } from '../MainPage'
+import ListPage from '../ListPage'
 
 function Home () {
-  const contentStyle: React.CSSProperties = {
-    height: '500px',
-    width: '760px'
-  }
+  const [currentPage, setCurrentPage] = useState<string>('')
+
+  useEffect(() => {}, [])
+
+  const [bodyEle, setBodyEle] = useState<ReactNode>(<MainPage />)
+
+  useEffect(() => {
+    if (currentPage == 'main') {
+      setBodyEle(<MainPage />)
+    } else {
+      setBodyEle(<ListPage />)
+    }
+  }, [currentPage])
 
   return (
     <div style={{ minHeight: '80vh' }}>
@@ -54,71 +75,14 @@ function Home () {
           className='border mt-5 border-solid'
           style={{ borderColor: '#EBEBEB', width: '15%' }}
         >
-          <LeftBar />
+          <LeftBar
+            onReplyChange={e => {
+              console.log(e)
+              setCurrentPage(e)
+            }}
+          />
         </div>
-        <div style={{ width: '80%' }}>
-          <div className='mt-5 flex justify-between'>
-            <Carousel autoplay style={{ width: '760px' }}>
-              <div>
-                <img
-                  src='https://img.openshop.com.hk/s2/202304/642e5f28369aa.jpg'
-                  style={contentStyle}
-                />
-              </div>
-              <div>
-                <img
-                  src='https://img.openshop.com.hk/s2/202303/63fef6039ea28.jpg'
-                  style={contentStyle}
-                />
-              </div>
-              <div>
-                <img
-                  src='https://img.openshop.com.hk/s2/202303/641d4c74e7026.jpg'
-                  style={contentStyle}
-                />
-              </div>
-              <div>
-                <img
-                  src='https://img.openshop.com.hk/s2/202304/644a44f81a39c.jpg'
-                  style={contentStyle}
-                />
-              </div>
-            </Carousel>
-            <div
-              className='border border-solid p-1 rounded-md'
-              style={{ borderColor: '#EBEBEB', width: '30%' }}
-            >
-              <div style={{ color: 'red', fontWeight: 600, textAlign: 'left' }}>
-                最新活動
-              </div>
-              <div
-                className='border border-solid px-5 py-4 mt-1 rounded-md'
-                style={{ borderColor: '#FFC195', width: '88%' }}
-              >
-                Jabra 消費獎賞享不停
-              </div>
-              <div
-                className='border border-solid px-5 py-4 mt-1 rounded-md'
-                style={{ borderColor: '#FFC195', width: '88%' }}
-              >
-                Altech電競椅
-              </div>
-              <div
-                className='border border-solid px-5 py-4 mt-1 rounded-md'
-                style={{ borderColor: '#FFC195', width: '88%' }}
-              >
-                MSI 限時購買MON
-              </div>
-              <div
-                className='border border-solid  px-5 py-4 mt-1 rounded-md'
-                style={{ borderColor: '#FFC195', width: '88%' }}
-              >
-                Jabra 消費獎賞享不停
-              </div>
-            </div>
-          </div>
-          <QuickSearch />
-        </div>
+        <div style={{ width: '80%' }}>{bodyEle}</div>
       </div>
     </div>
   )

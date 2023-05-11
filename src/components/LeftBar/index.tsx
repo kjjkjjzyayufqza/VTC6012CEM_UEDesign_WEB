@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import Icon, { SearchOutlined } from '@ant-design/icons'
 import { Menu, MenuProps } from 'antd'
 
@@ -100,7 +100,7 @@ export const LeftBar:FC<LeftBarModel> = ({onReplyChange}) => {
     <div className='w-full'>
       <Menu
         onClick={onClick}
-        // defaultSelectedKeys={['1']}
+        defaultSelectedKeys={['main']}
         // defaultOpenKeys={['sub1']}
         mode='inline'
         items={items}

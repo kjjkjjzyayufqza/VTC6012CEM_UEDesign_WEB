@@ -21,7 +21,7 @@ import { MainPage } from '../MainPage'
 import ListPage from '../ListPage'
 
 function Home () {
-  const [currentPage, setCurrentPage] = useState<string>('')
+  const [currentPage, setCurrentPage] = useState<string>('main')
 
   useEffect(() => {}, [])
 

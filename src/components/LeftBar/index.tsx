@@ -107,7 +107,6 @@ export const LeftBar:FC<LeftBarModel> = ({onReplyChange}) => {
         style={{
           background: '#ffffff',
           alignItems: 'center',
-          width: '256px'
         }}
       />
     </div>

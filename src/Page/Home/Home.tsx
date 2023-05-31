@@ -19,7 +19,8 @@ import { AndroidOutlined, AppleOutlined } from '@ant-design/icons'
 import { ItemCard } from '../../components/ItemCard'
 import { MainPage } from '../MainPage'
 import ListPage from '../ListPage'
-
+import PubSub from 'pubsub-js'
+import DetailPage from '../DetailPage'
 function Home () {
   const [currentPage, setCurrentPage] = useState<string>('main')
 
@@ -28,12 +29,29 @@ function Home () {
   const [bodyEle, setBodyEle] = useState<ReactNode>(<MainPage />)
 
   useEffect(() => {
-    if (currentPage == 'main') {
-      setBodyEle(<MainPage />)
-    } else {
-      setBodyEle(<ListPage />)
+    switch (currentPage) {
+      case 'main':
+        setBodyEle(<MainPage />)
+        break
+      case 'detail':
+        setBodyEle(<DetailPage />)
+        break
+      default:
+        setBodyEle(<ListPage />)
     }
   }, [currentPage])
+
+  useEffect(() => {
+    let mySubscriber = (msg: any, data: any) => {
+      setCurrentPage(data)
+    }
+
+    let token = PubSub.subscribe('switchPage', mySubscriber)
+
+    return () => {
+      PubSub.unsubscribe(token)
+    }
+  }, [])
 
   return (
     <div style={{ minHeight: '80vh' }}>

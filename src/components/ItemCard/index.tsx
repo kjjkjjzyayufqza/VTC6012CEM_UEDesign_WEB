@@ -1,4 +1,4 @@
-import { Badge, Card, Typography } from 'antd'
+import { Badge, Card, Tag, Typography } from 'antd'
 import Meta from 'antd/es/card/Meta'
 import React, { FC, ReactNode } from 'react'
 const { Text, Link } = Typography
@@ -8,11 +8,13 @@ interface ItemCardModel {
   topLeftisStock?: boolean
   topRightOffers?: boolean
   name?: string
-  descriptionCenter?: boolean
-  bottomCenterEle?: ReactNode
+  descriptionCenter?: string
+  bottomCenterEle?: boolean
   imageUrl?: string
   bottomStock?: boolean
   bottomisStock?: boolean
+  priceRange?: number | string
+  handleOnclick: () => void
 }
 
 export const ItemCard: FC<ItemCardModel> = ({
@@ -23,13 +25,18 @@ export const ItemCard: FC<ItemCardModel> = ({
   descriptionCenter,
   bottomCenterEle,
   imageUrl,
-  bottomStock
+  bottomStock,
+  priceRange,
+  handleOnclick
 }) => {
   return (
     <div className='w-full'>
       <Card
         hoverable
         className='border-2 border-solid md:max-w-72'
+        onClick={() => {
+          handleOnclick()
+        }}
         style={{ borderColor: '#EBEBEB' }}
         cover={
           <>
@@ -69,8 +76,34 @@ export const ItemCard: FC<ItemCardModel> = ({
         }
       >
         <Meta
-          title={<Text className='text-lg'>Microsoft Xbox 無線控制器</Text>}
-          description={<Text className='text-md text-red-400'>$369 ~ 419</Text>}
+          title={<Text className='text-lg'>{name}</Text>}
+          description={
+            <div className='grid justify-center items-center'>
+              {descriptionCenter && (
+                <Text style={{ color: '#a0a0a0' }} className='text-center'>
+                  {descriptionCenter}
+                </Text>
+              )}
+              <Text
+                className={`text-md text-red-400 ${
+                  bottomCenterEle ?? 'text-center'
+                }`}
+              >
+                ${`${priceRange} `}
+              </Text>
+              {bottomCenterEle && (
+                <Badge
+                  count={bottomStock ? '現貨' : '無貨'}
+                  showZero
+                  color={bottomStock ? '#2DB2CF' : '#9D9D9D'}
+                  className='pt-2 pl-2'
+                  style={{
+                    borderRadius: '3px'
+                  }}
+                ></Badge>
+              )}
+            </div>
+          }
         />
       </Card>
     </div>

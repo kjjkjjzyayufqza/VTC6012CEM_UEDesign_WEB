@@ -94,7 +94,11 @@ export const MainPage = () => {
 
           let childrens: ReactNode = (
             <div className='py-2'>
-              <ItemCard></ItemCard>
+              <ItemCard
+                handleOnclick={() => {
+                  PubSub.publish('switchPage', 'detail')
+                }}
+              ></ItemCard>
             </div>
           )
           if (i == 0) {
@@ -114,6 +118,11 @@ export const MainPage = () => {
                   topLeftStock
                   topLeftisStock={topLeftisStock}
                   imageUrl={e}
+                  name='Example'
+                  priceRange={'2199.00'}
+                  handleOnclick={() => {
+                    PubSub.publish('switchPage', 'detail')
+                  }}
                 ></ItemCard>
               )
             })
@@ -134,6 +143,36 @@ export const MainPage = () => {
                   topLeftStock
                   topLeftisStock={topLeftisStock}
                   imageUrl={e}
+                  name='Example'
+                  priceRange={'2199.00'}
+                  handleOnclick={() => {
+                    PubSub.publish('switchPage', 'detail')
+                  }}
+                ></ItemCard>
+              )
+            })
+          }else if (i == 2) {
+            childrens = [
+              'keyborad1.jpg',
+              'keyborad2.jpg',
+              'keyborad3.jpg',
+              'keyborad4.jpg',
+              'keyborad5.jpg'
+            ].map((e, i) => {
+              let topLeftisStock = true
+              if (i > 2) {
+                topLeftisStock = false
+              }
+              return (
+                <ItemCard
+                  topLeftStock
+                  topLeftisStock={topLeftisStock}
+                  imageUrl={e}
+                  name='Example'
+                  priceRange={'2199.00'}
+                  handleOnclick={() => {
+                    PubSub.publish('switchPage', 'detail')
+                  }}
                 ></ItemCard>
               )
             })

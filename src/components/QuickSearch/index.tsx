@@ -32,25 +32,24 @@ export const QuickSearch = () => {
       >
         <Form.Item label='類別' name='a'>
           <Select
-            defaultValue='lucy'
+            defaultValue='鼠標'
             style={{ width: 140 }}
             options={[
-              { value: 'jack', label: 'Jack' },
-              { value: 'lucy', label: 'Lucy' },
-              { value: 'Yiminghe', label: 'yiminghe' },
-              { value: 'disabled', label: 'Disabled', disabled: true }
+              { value: '鼠標', label: '鼠標' },
+              { value: '鍵盤', label: '鍵盤' },
+              { value: '顯卡', label: '顯卡' }
             ]}
           />
         </Form.Item>
         <Form.Item label='品牌' name='b' className='pl-4'>
           <Select
-            defaultValue='lucy'
+            defaultValue='Logitech'
             style={{ width: 140 }}
             options={[
-              { value: 'jack', label: 'Jack' },
-              { value: 'lucy', label: 'Lucy' },
-              { value: 'Yiminghe', label: 'yiminghe' },
-              { value: 'disabled', label: 'Disabled', disabled: true }
+              { value: 'Logitech', label: 'Logitech' },
+              { value: 'ASUS', label: 'ASUS' },
+              { value: 'MSI', label: 'MSI' },
+              { value: 'ROG', label: 'ROG' }
             ]}
           />
         </Form.Item>
@@ -58,20 +57,15 @@ export const QuickSearch = () => {
           <Select
             defaultValue='lucy'
             style={{ width: 140 }}
-            options={[
-              { value: 'jack', label: 'Jack' },
-              { value: 'lucy', label: 'Lucy' },
-              { value: 'Yiminghe', label: 'yiminghe' },
-              { value: 'disabled', label: 'Disabled', disabled: true }
-            ]}
+            options={[{ value: 'G502', label: 'G502' }]}
           />
         </Form.Item>
         <Form.Item label='價錢' name='b' className='pl-4'>
-          <Input placeholder='input placeholder' />
+          <Input placeholder='0' />
         </Form.Item>
         <div className='border border-b-1 border-black border-solid w-5 ml-1'></div>
         <Form.Item label='⁣⁣⁣⁣' name='b' className='pl-1'>
-          <Input placeholder='input placeholder' />
+          <Input placeholder='--' />
         </Form.Item>
 
         <Form.Item className='pl-4'>

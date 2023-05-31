@@ -95,7 +95,7 @@ function ListPage () {
                 borderColor: '#E32A57'
               }
             ]}
-            activeDotStyle={{ borderColor: '#E32A57' }}
+            // activeDotStyle={{ borderColor: '#E32A57' }}
             // railStyle={{ borderColor: '#E32A57' }}
           />
           <Input placeholder='0' style={{ width: '15%' }} className='ml-5' />
